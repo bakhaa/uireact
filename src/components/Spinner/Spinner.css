@@ -1,0 +1,216 @@
+@import '../../styles/variables.css';
+
+:root {
+  --spinner-wave-background-color: color(var(--color-primary) alpha(85%));
+  --spinner-wave-color: #fff;
+  --spinner-wawe-small-height: 24px;
+  --spinner-wave-small-stick-width: 2px;
+  --spinner-wawe-height: 40px;
+  --spinner-wave-stick-width: 2px;
+  --spinner-wawe-large-height: 50px;
+  --spinner-wave-large-stick-width: 3px;
+  --spinner-dotted-small-dot-size: 4px;
+  --spinner-dotted-dot-size: 6px;
+  --spinner-dotted-large-dot-size: 8px;
+  --spinner-dotted-animation-delay: 160ms;
+  --spinner-dotted-dot-color: var(--color-primary);
+  --spinner-round-size: 14px;
+  --spinner-round-border-width: 6px;
+  --spinner-round-normal-size: 24px;
+  --spinner-round-normal-border-width: 4px;
+  --spinner-round-large-size: 34px;
+  --spinner-round-large-border-width: 3px;
+  --spinner-round-color: var(--color-primary);
+  --spinner-round-animation-duration: 2s;
+}
+
+@keyframes line-scale {
+  0%,
+  40%,
+  100% {
+    transform: scaleY(0.4);
+  }
+
+  20% {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  80%,
+  100% {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+
+  50% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -35px;
+  }
+
+  100% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -124px;
+  }
+}
+
+/* Styles */
+.container {
+  all: initial;
+  cursor: inherit;
+}
+
+/* Dotted spinner */
+.dotted {
+  position: relative;
+  display: inline-flex;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.dot {
+  display: inline-block;
+  animation: pulse 1s infinite ease-in-out;
+  transform-origin: 50% 50%;
+  vertical-align: middle;
+  border-radius: 50%;
+  background-color: var(--spinner-dotted-dot-color);
+
+  &:nth-child(2) {
+    animation-delay: var(--spinner-dotted-animation-delay);
+  }
+
+  &:nth-child(3) {
+    animation-delay: calc(var(--spinner-dotted-animation-delay) * 2);
+  }
+}
+
+/* Round spinner */
+.round {
+  vertical-align: middle;
+  animation: spin var(--spinner-round-animation-duration) infinite linear;
+  align-self: center;
+  stroke: var(--spinner-round-color);
+}
+
+.path {
+  animation: dash calc(var(--spinner-round-animation-duration) / 1.5) ease-in-out infinite;
+  stroke-linecap: round;
+}
+
+/* Size */
+.small {
+  &.wave {
+    width: var(--spinner-wawe-small-height);
+    height: var(--spinner-wawe-small-height);
+    padding: 0;
+
+    & .stick {
+      width: var(--spinner-wave-small-stick-width);
+      height: 10px;
+      margin: 0 1px 0 0;
+    }
+  }
+
+  &.dotted {
+    height: var(--spinner-dotted-small-dot-size);
+
+    & .dot {
+      margin: 0 1px;
+      width: var(--spinner-dotted-small-dot-size);
+      height: var(--spinner-dotted-small-dot-size);
+    }
+  }
+
+  &.round {
+    width: var(--spinner-round-size);
+    height: var(--spinner-round-size);
+
+    & .path {
+      stroke-width: var(--spinner-round-border-width);
+    }
+  }
+}
+
+.normal {
+  &.wave {
+    width: var(--spinner-wawe-height);
+    height: var(--spinner-wawe-height);
+
+    & .stick {
+      width: var(--spinner-wave-stick-width);
+      height: 20px;
+      margin: 0 1px;
+    }
+  }
+
+  &.dotted {
+    height: var(--spinner-dotted-dot-size);
+
+    & .dot {
+      width: var(--spinner-dotted-dot-size);
+      height: var(--spinner-dotted-dot-size);
+      margin: 0 2px 0 1px;
+    }
+  }
+
+  &.round {
+    width: var(--spinner-round-normal-size);
+    height: var(--spinner-round-normal-size);
+
+    & .path {
+      stroke-width: var(--spinner-round-normal-border-width);
+    }
+  }
+}
+
+.large {
+  &.round {
+    width: var(--spinner-round-large-size);
+    height: var(--spinner-round-large-size);
+
+    & .path {
+      stroke-width: var(--spinner-round-large-border-width);
+    }
+  }
+
+  &.wave {
+    width: var(--spinner-wawe-large-height);
+    height: var(--spinner-wawe-large-height);
+
+    & .stick {
+      width: var(--spinner-wave-large-stick-width);
+      height: 28px;
+      margin: 0 2px 0 1px;
+    }
+  }
+
+  &.dotted {
+    height: calc(var(--spinner-dotted-dot-size) * 2);
+
+    & .dot {
+      margin: 0 2px;
+      width: calc(var(--spinner-dotted-dot-size) * 2);
+      height: calc(var(--spinner-dotted-dot-size) * 2);
+    }
+  }
+}
