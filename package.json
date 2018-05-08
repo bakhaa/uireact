@@ -3,12 +3,13 @@
   "version": "1.0.0",
   "description": "UI components React",
   "main": "index.js",
+  "scripts": {
+    "start": "npx styleguidist server",
+    "create": "node scripts/create-component.js"
+  },
   "repository": "https://github.com/bakhaa/uireact",
   "author": "bakhaa",
   "license": "MIT",
-  "scripts": {
-    "start": "npx styleguidist server"
-  },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
@@ -16,12 +17,15 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
+    "chalk": "^2.4.1",
+    "ejs": "^2.6.1",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.11.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.7.0",
     "file-loader": "^1.1.11",
+    "inquirer": "^5.2.0",
     "postcss-cssnext": "^3.1.0",
     "postcss-import": "^11.1.0",
     "postcss-loader": "^2.1.5",
