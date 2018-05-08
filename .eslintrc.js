@@ -7,6 +7,7 @@ module.exports = {
       "jsx-a11y/click-events-have-key-events": 0,
       "object-curly-newline": 0,
       "no-underscore-dangle": 0,
-      "react/forbid-prop-types": 0
+      "react/forbid-prop-types": 0,
+      "react/require-default-props": 0
     }
 };

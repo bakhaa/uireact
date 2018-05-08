@@ -79,16 +79,11 @@ IconButton.propTypes = {
 };
 
 IconButton.defaultProps = {
-  id: '',
-  className: '',
-  style: {},
-  glyph: '',
   active: true,
   size: 'normal',
   flat: false,
   theme: 'default',
   disabled: false,
-  onClick: () => {},
 };
 
 export default IconButton;

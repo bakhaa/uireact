@@ -55,10 +55,6 @@ LinkButton.propTypes = {
 };
 
 LinkButton.defaultProps = {
-  className: '',
-  id: '',
-  href: '',
-  target: '',
   theme: 'default',
   view: 'button',
   size: 'normal',

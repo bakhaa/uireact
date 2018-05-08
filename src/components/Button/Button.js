@@ -81,12 +81,6 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
-  onClick: (event) => {
-    console.log('click button', event.target); // eslint-disable-line
-  },
-  form: '',
-  id: '',
-  className: '',
   type: 'button',
   theme: 'default',
   view: 'button',

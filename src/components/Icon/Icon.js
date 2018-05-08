@@ -113,13 +113,9 @@ Icon.propTypes = {
 };
 
 Icon.defaultProps = {
-  id: '',
-  className: '',
-  glyph: '',
   size: SIZES.default,
   theme: 'default',
   inverted: false,
-  onClick: () => {},
 };
 
 export default Icon;
