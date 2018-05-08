@@ -1,0 +1,89 @@
+@import '../../styles/variables.css';
+
+:root {
+  --icon-default-color: rgb(178, 178, 178);
+  --icon-inverted-color: #fff;
+}
+
+.container {
+  display: inline-flex;
+  cursor: inherit;
+  user-select: none;
+  vertical-align: middle;
+  background-color: transparent;
+  flex-flow: row;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.inverted {
+  box-sizing: border-box;
+  cursor: inherit;
+  border-radius: 50%;
+  background-color: var(--icon-default-color);
+  color: var(--icon-inverted-color) !important;
+}
+
+.icon {
+  display: block;
+  fill: currentColor;
+}
+
+.clickable {
+  cursor: pointer;
+  transition: opacity var(--default-transition-duration) ease-in-out;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+/* Themes */
+.default {
+  color: var(--icon-default-color);
+
+  &.inverted {
+    background-color: var(--icon-default-color);
+  }
+}
+
+.primary {
+  color: var(--color-primary);
+
+  &.inverted {
+    background-color: var(--color-primary);
+  }
+}
+
+.success {
+  color: var(--color-success);
+
+  &.inverted {
+    background-color: var(--color-success);
+  }
+}
+
+.danger {
+  color: var(--color-danger);
+
+  &.inverted {
+    background-color: var(--color-danger);
+  }
+}
+
+.info {
+  color: var(--color-info);
+
+  &.inverted {
+    background-color: var(--color-info);
+  }
+}
+
+.warning {
+  color: var(--color-warning);
+
+  &.inverted {
+    background-color: var(--color-warning);
+  }
+}
