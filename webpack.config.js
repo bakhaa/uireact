@@ -12,7 +12,7 @@ const whitelist = [
 module.exports = {
   entry: [
     'babel-polyfill',
-    './src/'
+    './src/',
   ],
   module: {
     rules: [
@@ -21,8 +21,8 @@ module.exports = {
         exclude: /node_modules/,
         loaders: ['babel-loader'],
         include: [
-          path.resolve(__dirname, 'src')
-        ]
+          path.resolve(__dirname, 'src'),
+        ],
       },
       {
         test: /\.css$/,
@@ -34,14 +34,25 @@ module.exports = {
             options: {
               modules: true,
               importLoaders: 1,
-              localIdentName: '[name]__[local]'
-            }
+              localIdentName: '[name]__[local]',
+            },
           },
           {
-            loader: 'postcss-loader'
-          }
-        ]
+            loader: 'postcss-loader',
+          },
+        ],
       },
-    ]
-  }
+      {
+        test: /\.(jpg|png|svg|gif)$/,
+        include: /./,
+        exclude: resolve('src/components/Icon/svg'),
+        use: ['file-loader'],
+      },
+      {
+        test: /\.(svg)$/,
+        include: resolve('src/components/Icon/svg'),
+        loader: 'svg-sprite-loader',
+      },
+    ],
+  },
 };
