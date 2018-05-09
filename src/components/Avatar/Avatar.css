@@ -1,0 +1,26 @@
+@import '../../styles/variables.css';
+
+:root {
+  --peer-avatar-placeholder-color: #fff;
+  --peer-avatar-online-size: 8px;
+  --peer-avatar-online-color: var(--leafy-green);
+}
+
+.container {
+  position: relative;
+  display: inline-flex;
+  cursor: inherit;
+}
+
+.online {
+  fill: var(--peer-avatar-online-color);
+}
+
+.clickable {
+  cursor: pointer;
+  transition: opacity var(--default-transition-duration) ease-in-out;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
