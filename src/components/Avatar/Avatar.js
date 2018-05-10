@@ -54,9 +54,7 @@ class Avatar extends PureComponent {
         x2="93.21%"
         y2="-5.31%"
       >
-        <stop stopColor="#f1f1f1">
-          <animate attributeName="stop-color" values="#f1f1f1; #cfcfcf;" dur="1.5s" repeatCount="indefinite" />
-        </stop>
+        <stop stopColor="#c5c5c5" />
       </linearGradient>
     );
   }
